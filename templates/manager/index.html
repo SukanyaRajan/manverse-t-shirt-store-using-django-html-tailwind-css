@@ -1,0 +1,28 @@
+{% extends "base/manager-base.html" %} {% block container %} {% load static %}
+{% include 'includes/manager-nav.html' %}
+
+<section class="px-10 py-10 grid grid-cols-4 gap-5">
+    <div class="col-span-1 p-5 border-2 rounded-md">
+        <h1 class="text-center font-bold text-[16px] mb-[16px]">ORDERS</h1>
+        <p class="text-center font-bold text-[24px]">{{orders}}</p>
+    </div>
+    <div class="col-span-1 p-5 border-2 rounded-md">
+        <h1 class="text-center font-bold text-[16px] mb-[16px]">PRODUCTS</h1>
+        <p class="text-center font-bold text-[24px]">{{products}}</p>
+    </div>
+    <div class="col-span-1 p-5 border-2 rounded-md">
+        <h1 class="text-center font-bold text-[16px] mb-[16px]">CATEGORIES</h1>
+        <p class="text-center font-bold text-[24px]">{{categories}}</p>
+    </div>
+    <div class="col-span-1 p-5 border-2 rounded-md">
+        <h1 class="text-center font-bold text-[16px] mb-[16px]">CUSTOMERS</h1>
+        <p class="text-center font-bold text-[24px]">{{customers}}</p>
+    </div>
+
+
+</section>
+
+
+
+
+{% endblock %}

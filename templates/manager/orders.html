@@ -1,0 +1,51 @@
+{% extends "base/manager-base.html" %} {% block container %} {% load static %}
+{% include 'includes/manager-nav.html' %}
+
+
+<section class="p-10">
+    <div class="flex justify-between items-center mb-5">
+        <h1>ORDERS LIST:</h1>
+    </div>
+    <div>
+        <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <table class="min-w-full text-left text-sm font-light">
+                    <thead class="border-b font-medium dark:border-neutral-500">
+                      <tr>
+                        <th scope="col" class="px-6 py-4">Customer</th>
+                        <th scope="col" class="px-6 py-4">Product</th>
+                        <th scope="col" class="px-6 py-4">Size</th>
+                        <th scope="col" class="px-6 py-4">Address</th>
+                        <th scope="col" class="px-6 py-4">Quantity</th>
+                        <th scope="col" class="px-6 py-4">Amount</th>
+                        <th scope="col" class="px-6 py-4">Status</th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for instance in instances %}
+                        <tr class="border-b dark:border-neutral-500">
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.customer.user.first_name}}</td>
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.product.name}}</td>
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.size}}</td>
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.address}} {{instance.pincode}}</td>
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.quantity}}</td>
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.amount}}</td>
+                            <td class="whitespace-nowrap px-6 py-4">{{instance.status}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</section>
+
+{% endblock %}
